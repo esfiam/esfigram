@@ -1,5 +1,5 @@
 import aiohttp
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 
 from esfigram.core.exceptions import TelegramAPIError, UnknownError, ERROR_MAP, InternalServerError, \
     TooManyRequestsError, NotFoundError, ForbiddenError, UnauthorizedError, BadRequestError
@@ -36,7 +36,6 @@ class TelegramAPI:
             except Exception as e:
                 raise ValueError(f"Failed to validate token: {e}")
         return self.authentication
-
 
     async def request(self, method: str, params: Dict[str, Any]) -> Dict:
 
@@ -128,5 +127,3 @@ class TelegramAPI:
                 method=method,
                 params=params
             )
-
-

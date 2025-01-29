@@ -37,8 +37,6 @@ class TelegramAPI:
                 raise ValueError(f"Failed to validate token: {e}")
         return self.authentication
 
-    import aiohttp
-    from typing import Dict, Any
 
     async def request(self, method: str, params: Dict[str, Any]) -> Dict:
 
